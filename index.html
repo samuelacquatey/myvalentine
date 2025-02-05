@@ -4,92 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Enyorene💗</title>
-    <!-- Adding Favicon -->
-    <link rel="shortcut icon" type="image/jpg" href="heart.png"/>
-    <!-- Bootstrap CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Typed.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <title>Heart Animation</title>
+    <link rel="stylesheet" href="ztyle.css">
 </head>
 <body>
-
-    <!-- Audio element to play the song -->
-    <audio id="backgroundMusic" src="Chemtrails Over The Country Club - Lana Del Rey.mp3" autoplay loop></audio>
-
-    <div class="position-absolute top-50 start-50 translate-middle">
-        <div id="parentElement">
-            <div class="d-flex justify-content-center">
-                <lottie-player src="https://assets10.lottiefiles.com/private_files/lf30_mywfoph1.json"  background="transparent"  speed="1"  style="width: 300px; height: 300px;"  loop  autoplay></lottie-player>
-            </div>
-            <h1>Irene ✨ <br>Will you be my Valentine🥺❤️</h1>
-            <div class="d-flex justify-content-center">
-                <button id="noButton" class="btn btn-primary">😈I like you and all but no</button> <br>
-                <button id="yesButton" class="btn btn-primary">🥰Of Course, Yes!</button>
-            </div>
-        </div>
-        <div class="position-absolute top-50 start-50 translate-middle" id="showMessage" style="display: none;">
-            <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_utsfwa3k.json"  background="transparent"  speed="0.7"  style="width: 300px; height: 300px;"  loop autoplay></lottie-player>
-            <h1 class="ml">
-                <span class="text-wrapper">
-                    <span class="letterss"></span>
-                </span>
-            </h1>
-        </div>
-    </div>
-
-    <!-- LottieFiles CDN -->
-    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-    <!-- Bootstrap JS CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-    <!-- Anim JS CDN -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
-    <!-- Custom JavaScript -->
-    <script src="app.js"></script>
+    <canvas id="canvas"></canvas>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    var options = {
-        strings: ["❤️Yasssss I love you so much", "Irene x Kwasi❤️"],
-        typeSpeed: 50,
-        backSpeed: 25,
-        loop: true,
-        showCursor: false
-    };
+        var canvas = document.getElementById("canvas");
 
-    var typed = new Typed(".ml .letterss", options);
-});
-
-function propose() {
-    document.getElementById("parentElement").style.display = "none";
-    document.getElementById("showMessage").style.display = "block";
-}
-
-        document.addEventListener('DOMContentLoaded', function() {
-        var noButton = document.getElementById('noButton');
-        var yesButton = document.getElementById('yesButton');
-        var messages = ["Really no?", "Even if i ask nicely?", "I will give you akple😭", "but i'm going to die🥺", "great, this is Kwasi's ghost speaking", "but i love you", "i'll get you flowers🌸"];
-        var messageIndex = 0;
-        var yesButtonScale = 1;
-
-        if (noButton && yesButton) {
-            noButton.addEventListener('click', function() {
-                messageIndex = (messageIndex + 1) % messages.length;
-                noButton.textContent = messages[messageIndex];
-                yesButtonScale += 0.25;
-                yesButton.style.transform = `scale(${yesButtonScale})`;
-            });
-
-            yesButton.addEventListener('click', propose);
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
         }
 
-        if (yesButton && backgroundMusic) {
-                yesButton.addEventListener('click', function() {
-                    backgroundMusic.play();
-                });
-            }
-    });
+        // Set initial canvas size for mobile screen
+        resizeCanvas();
+
+        // Resize canvas when window is resized
+        window.addEventListener('resize', resizeCanvas);
+
+        // Initialize the GL context
+        var gl = canvas.getContext('webgl');
+        if (!gl) {
+            console.error("Unable to initialize WebGL. Your browser may not support it.");
+        }
     </script>
+    <script src="appz.js"></script>
+    <a href="index.html"><div id="btn" >press here, Irene❤️</div></a>
 </body>
 </html>
