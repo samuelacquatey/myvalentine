@@ -1,0 +1,47 @@
+body {  
+    background-color: #000;    
+    margin: 0;  
+    overflow: hidden;  
+    background-repeat: no-repeat;  
+   }  
+
+#btn {  
+    position: absolute;  
+    top: 85%;  
+    left: 50%;  
+    width: 160px;
+    transform: translate(-50%, -50%);  
+    background-color: rgba(255, 255, 255, 0.1);  /* semi-transparent white */
+    border: 1px solid rgba(255, 255, 255, 0.2);  /* semi-transparent white border */
+    backdrop-filter: blur(10px);  /* blur the background */
+    color: #fff;  
+    padding: 10px 20px;  
+    font-size: 20px;  
+    cursor: pointer;  
+    transition: 0.5s;  
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);  /* add some shadow */
+    border-radius: 10px;  /* round the corners */
+    animation: glow 2s ease-in-out infinite;
+}
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 #25aadf, 0 0 10px #25aadf, 0 0 15px #25aadf, 0 0 20px #25aadf;
+    }
+    50% {
+        box-shadow: 0 0 5px #fda8a2, 0 0 10px #fda8a2, 0 0 15px #fda8a2, 0 0 20px #fda8a2;
+    }
+    100% {
+        box-shadow: 0 0 5px #25aadf, 0 0 10px #25aadf, 0 0 15px #25aadf, 0 0 20px #25aadf;
+    }
+}
+
+/* CSS */
+.animated-image {
+    position: absolute;
+    animation: fadeinout 3s ease-in-out;
+}
+
+@keyframes fadeinout {
+    0%, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}

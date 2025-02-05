@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowing Text Animation with GSAP</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 100px;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 0 10px rgba(255, 0, 255, 0.7),
+                         0 0 20px rgba(255, 0, 255, 0.8),
+                         0 0 30px rgba(255, 0, 255, 1);
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="glowText">irene</h1>
+
+    <script>
+        gsap.to("#glowText", {
+            duration: 2,
+            opacity: 1,
+            textShadow: "0 0 20px rgba(255, 0, 255, 1), 0 0 40px rgba(255, 0, 255, 1), 0 0 60px rgba(255, 0, 255, 1)",
+            repeat: -1,
+            yoyo: true,
+            ease: "power2.inOut"
+        });
+    </script>
+</body>
+</html>
